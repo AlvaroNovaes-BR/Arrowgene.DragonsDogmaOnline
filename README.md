@@ -8,7 +8,7 @@ Server Emulator for the Game Dragons Dogma Online.
   - [Visual Studio](#visual-studio)
   - [VS Code](#vs-code)
   - [IntelliJ Rider](#intellij-rider)
-- [Sever](#server)
+- [Server](#server)
 - [Client](#client)
 - [Guidelines](#guidelines)
 - [Attribution](#attribution)
@@ -59,66 +59,66 @@ With default configuration the server will listen on following ports:
 80 - http/download
 52100 - tcp/server
 ```
-ensure that no other local services listen on these ports.
+Ensure that no other local services listen on these ports.
 
 # Client
 Launch the client with the following args:
 `"DDO.exe" "addr=localhost port=52100 token=00000000000000000000 DL=http://127.0.0.1/win/ LVer=03.04.003.20181115.0 RVer=3040008"`
 
-#Development
+# Development
 ## Project
 ### Cli
-Entrypoint to the application, allows to start different components via parameters
+Entrypoint to the application, allows to start different components via parameters.
 ### Server
-- Read / Write network packages
-- Manage Connections
+- Read / Write network packages.
+- Manage Connections.
 #### Asset
-- Static Assets that can be loaded on startup
+- Static Assets that can be loaded on startup.
 ### LoginServer
-- Handling of Login related packets
+- Handling of Login related packets.
 ### GameServer
-- Handling of Game related packets
+- Handling of Game related packets.
 ### WebServer
 - Handling http/https requests.
-- Client version request
-- Account creation API
-- Login / Token retrieval API
+- Client version request.
+- Account creation API.
+- Login / Token retrieval API.
 ### Database
-- Persistent storage
-- Supports different implementations via IDatabase interface
-- SQLite concrete implementation
+- Persistent storage.
+- Supports different implementations via IDatabase interface.
+- SQLite concrete implementation.
 ### Shared
-Extension.cs -> Useful C# extension methods
-Util.cs -> Static Utility functions
+Extension.cs -> Useful C# extension methods.
+Util.cs -> Static Utility functions.
 #### Crypto
 Components related to cryptography, for network protocol, token generation or random oracle.
 #### Csv
-Reading and parsing of CSV files
+Reading and parsing of CSV files.
 #### Entity
 Representing the packet structure of the network protocol, including serialization adn deserialization.
 #### Model
-Classes that can be used by multiple components, usually just to hold data in a structured way
+Classes that can be used by multiple components, usually just to hold data in a structured way.
 ### PacketLibrary
-- Read pcap files (experimental)
-- Read (custom) json format of packet data
-- Format and annotate packets with internal packet names
+- Read pcap files (experimental).
+- Read (custom) json format of packet data.
+- Format and annotate packets with internal packet names.
 ### Test
-- Unit test to lock in functionality
+- Unit test to lock in functionality.
 
 
 # Guidelines
 ## Git 
 ### Workflow
-The work on this project should happen via `feature-branches`
+The work on this project should happen via `feature-branches`.
    
 Feature branches (or sometimes called topic branches) are used to develop new features for the upcoming or a distant future release. 
 When starting development of a feature, the target release in which this feature will be incorporated may well be unknown at that point. 
 The essence of a feature branch is that it exists as long as the feature is in development, 
 but will eventually be merged back into develop (to definitely add the new feature to the upcoming release) or discarded (in case of a disappointing experiment).
    
-1) Create a new `feature/feature-name` or `fix/bug-fix-name` branch from master
-2) Push all your changes to that branch
-3) Create a Pull Request to merge that branch into `master`
+1) Create a new `feature/feature-name` or `fix/bug-fix-name` branch from master.
+2) Push all your changes to that branch.
+3) Create a Pull Request to merge that branch into `master`.
 
 ## Best Practise
 - Do not use Console.WriteLine etc, use the specially designed logger.
@@ -141,7 +141,7 @@ but will eventually be merged back into develop (to definitely add the new featu
 
 # Attribution
 ## Contributors / Making It Happening
-Let me preface with that this work could not exist without the excellent work of various individuals
+Let me preface with that this work could not exist without the excellent work of various individuals.
 - Ando - Reverse Engineering & Tooling (Session Splitter, Camellia Key Cracker)
 - David - Reverse Engineering (unpacking PC Executable, defeating Anti Debug and CRC checks)
 - The White Dragon Temple
